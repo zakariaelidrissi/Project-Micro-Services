@@ -1,4 +1,4 @@
-package org.zr7.kafkaservice.entities;
+package org.zr7.billingservice.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @Data @NoArgsConstructor @AllArgsConstructor @ToString
 public class Facture {
-    private Long idFacture;
-    private String nameClient;
-    private double priceFacture;
+    private Long factureID;
+    private String clientName;
+    private double facturePrice;
 }

@@ -33,8 +33,10 @@ public class BillingServiceApplication {
 							CustomerRestClient customerRestClient,
 							ProductItemRestClient productItemRestClient){
 		return args -> {
+
 			Customer customer = customerRestClient.getCustomerById(1L);
 			Bill bill1 = billRepository.save(new Bill(null, new Date(), null, customer.getId(), null));
+			//Bill bill2 = billRepository.findById(1L).get();
 			PagedModel<Product> productPagedModel = productItemRestClient.pageProducts();
 			productPagedModel.forEach(p->{
 				ProductItem productItem = new ProductItem();
