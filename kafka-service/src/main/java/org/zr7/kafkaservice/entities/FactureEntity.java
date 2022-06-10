@@ -14,6 +14,7 @@ import javax.persistence.Id;
 @Data @NoArgsConstructor @AllArgsConstructor @ToString
 public class FactureEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long factureID;
     private String clientName;
     private double facturePrice;

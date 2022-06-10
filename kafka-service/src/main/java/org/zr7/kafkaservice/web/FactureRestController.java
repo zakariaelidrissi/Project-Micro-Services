@@ -16,7 +16,7 @@ public class FactureRestController {
 
     @GetMapping(path = "/publish/{topic}/{name}/{id}")
     public FactureEntity publish(@PathVariable String topic, @PathVariable String name, @PathVariable Long id){
-        FactureEntity factureEntity = new FactureEntity(id, name, new Random().nextInt(6000));
+        FactureEntity factureEntity = new FactureEntity(null, id, name, new Random().nextInt(6000));
         streamBridge.send(topic, factureEntity);
 
         return factureEntity;
