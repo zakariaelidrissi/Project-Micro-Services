@@ -1,6 +1,13 @@
 # Project-Micro-Services
- 
-<h1>L'bjectif du projet </h1>
+
+# *****************************************************
+# Zakaria EL Idrissi
+# Master Intelligence Artificiel et Analyse De Données
+# Faculté des sciences Meknès
+# zak.elidrissi@edu.umi.ac.ma
+# *****************************************************
+
+# <h1>L'bjectif du projet </h1>
 <p>
  On va créer un système distribué basé sur les micro-services permettant de gérer les factures des clients en utilisant
  l'architecture ci-dessous, en y intégrant un Bus de messagerie avec KAFKA, un service de Stream processing avec Kafka Streams
@@ -111,7 +118,43 @@
 </ol>
 
 <h2> PARTIE 2 : </h2>
+<p>Dans cette partie, on va créer un broker Kafka .</p> 
+<h3>Etape 1 :</h3>
+<p>
+ Tout d'abord va démarrer le serveur kafka. Alors, pour démarrer kafka il faut de démarrer le serveur zookeeper, puis le serveur kafka
+</p>
+<p>Voici un exemple qui montre comment démarrer zookeeper et kafka</p>
+<p>zookeeper utilise le port : 2181</p>
 
+![image](https://user-images.githubusercontent.com/61559275/172463937-71f61644-e9a4-43e7-9326-bbbc2e373223.png)
+
+<p>kafka utilise le port : 9092</p>
+
+![image](https://user-images.githubusercontent.com/61559275/172465006-9494cfaa-9ac5-4f46-81c7-cf5eed5a3758.png)
+
+<h3>Etape 2 :</h3>
+<p>
+ Dans cette etape on va créer un Producer KAFKA qui permet d’envoyer à un tompic « FACTURATION » à chaque seconde un message
+ contenant le numéro de la facture, le nom du client et le montant de la facture.<br>
+ on commence par créer une fonction de type Supplier qui retourne un objet de facturation après une créer par cmd un 
+ consumer pour consommer les facturation envoyé par le Producer<br>
+ Voici un exemple
+</p>
+
+![image](https://user-images.githubusercontent.com/61559275/173151325-8e93f5b6-f524-4ae1-b27e-f2f21daaec86.png)
+
+![image](https://user-images.githubusercontent.com/61559275/173151895-0d04bf67-7a29-4ef7-9af1-8d7b899420fd.png)
+
+<h3>Etape 3 : </h3>
+<p>
+ Dans cette etape on va créer une fonction de type Cunsomer qui permet de consommer les messages du Topic
+ « FACTURATION » et de les enregistrer dans la base de données.<br>
+ Voici un exemple 
+</p>
+
+![image](https://user-images.githubusercontent.com/61559275/173153157-51926822-422c-4dc1-a5a6-b1d0d056df7f.png)
+
+![image](https://user-images.githubusercontent.com/61559275/173153234-5a6091e5-7e20-4b49-be19-a2eed9bb6f83.png)
 
 
 
