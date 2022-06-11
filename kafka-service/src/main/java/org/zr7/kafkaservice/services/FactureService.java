@@ -22,7 +22,7 @@ public class FactureService {
     private FactureEntityRepository factureEntityRepository;
 
     @Bean
-    public Consumer<FactureEntity> factureConsumer(){
+    public Consumer<FactureEntity> factureDbConsumer(){
         return (input)->{
             System.out.println(input.toString());
             FactureEntity factureEntity = new FactureEntity(null, input.getFactureID(),
@@ -32,16 +32,15 @@ public class FactureService {
         };
     }
 
-    /*
-    @Bean
+    //@Bean
     public Consumer<FactureEntity> factureConsumer(){
         return (input)->{
+            System.out.println("******************************************");
             System.out.println(input.getFactureID());
             System.out.println(input.getClientName());
             System.out.println(input.getFacturePrice());
         };
     }
-     */
 
     @Bean
     public Supplier<FactureEntity> factureSupplier(){
@@ -51,6 +50,20 @@ public class FactureService {
                 Math.random() > 0.5?"zaki":"jamal",
                 new Random().nextInt(5000)
         );
+    }
+
+    //@Bean
+    public Function<KStream<String,FactureEntity>,KStream<String,Double>> KStreamFunctionClientFacture(){
+
+        return (input)->input
+
+                .map((k,v)->new KeyValue<>(v.getClientName(),v.getFacturePrice()))
+                .groupBy((k,v)->k, Grouped.with(Serdes.String(),Serdes.Double()))
+                .reduce((c1,c2)->c1+c2)
+                .toStream()
+                .map((k,v)->new KeyValue<>("total des factures de Client:" + k + "  est  = ",v));
+
+
     }
 
     //@Bean
