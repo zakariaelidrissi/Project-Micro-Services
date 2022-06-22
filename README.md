@@ -2,7 +2,7 @@
 
 # *****************************************************
 # Zakaria EL Idrissi
-# Master Intelligence Artificiel et Analyse De Données
+# Master Intelligence Artificiel et Analyse Des Données
 # Faculté des sciences Meknès
 # zak.elidrissi@edu.umi.ac.ma
 # *****************************************************
