@@ -7,7 +7,7 @@
 # zak.elidrissi@edu.umi.ac.ma
 # *****************************************************
 
-# <h1>L'bjectif du projet </h1>
+# <h1>L'objectif du projet </h1>
 <p>
  On va créer un système distribué basé sur les micro-services permettant de gérer les factures des clients en utilisant
  l'architecture ci-dessous, en y intégrant un Bus de messagerie avec KAFKA, un service de Stream processing avec Kafka Streams
