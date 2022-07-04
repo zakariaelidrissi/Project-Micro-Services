@@ -17,7 +17,7 @@
 
 <h2> PARTIE 1 : </h2>
 <p>
- Dans cette partie on va créer cinq micro-services, chaque micro-service contient un seul fonctionnalité.<br>
+ Dans cette partie on va créer cinq micro-services, chaque micro-service contient une seule fonctionnalité.<br>
  Voici la liste des micro-services détails :
 </p>
 <ol>
